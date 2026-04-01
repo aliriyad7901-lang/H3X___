@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>H3X GROUP | VIP EXPERIENCE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* إعدادات الـ VIP والألوان المريحة */
+        :root {
+            --dark-bg: #0d0d0d;
+            --soft-card: #161616;
+            --gold-accent: #d4af37; /* لون ذهبي خفيف للفخامة */
+            --insta-btn: #e1306c;
+            --wa-btn: #25d366;
+            --text-main: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ترحيب VIP متحرك */
+        .hero-header {
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+            border-bottom: 1px solid #222;
+        }
+
+        .welcome-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: vipFadeIn 1.2s forwards;
+            text-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .welcome-sub {
+            font-size: 0.9rem;
+            color: var(--gold-accent);
+            letter-spacing: 5px;
+            margin-top: 10px;
+            opacity: 0;
+            animation: vipFadeIn 1.2s 0.5s forwards;
+        }
+
+        @keyframes vipFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* حاوية الصورة الرئيسية */
+        .main-frame {
+            width: 92%;
+            margin: -40px auto 20px;
+            background: var(--soft-card);
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .main-frame img { width: 100%; display: block; filter: brightness(0.9); }
+
+        /* معرض البضائع الاحترافي */
+        .gallery-container {
+            width: 92%;
+            margin: 20px auto;
+        }
+
+        .gallery-title {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            border-right: 3px solid var(--gold-accent);
+            padding-right: 10px;
+            font-weight: bold;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            background: var(--soft-card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #222;
+            aspect-ratio: 1/1;
+        }
+
+        .slides-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .slide-unit {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .slide-unit img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            transition: 0.5s;
+        }
+
+        /* السهم الجانبي */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .arrow-next { left: 10px; }
+        .arrow-prev { right: 10px; }
+
+        /* تعليمات الزبون VIP */
+        .vip-note {
+            width: 92%;
+            margin: 20px auto;
+            padding: 15px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 8px;
+            border: 1px dashed var(--gold-accent);
+            font-size: 0.85rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* أزرار التواصل السفلية */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 92%;
+            margin: 30px auto 50px;
+        }
+
+        .contact-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-whatsapp { background: var(--wa-btn); }
+
+        .contact-btn i { font-size: 1.8rem; margin-bottom: 8px; }
+        .contact-btn:active { transform: scale(0.95); }
+
+    </style>
+</head>
+<body>
+
+    <!-- الترحيب VIP -->
+    <header class="hero-header">
+        <h1 class="welcome-title">H3X GROUP</h1>
+        <p class="welcome-sub">QUALITY IS OUR PRIORITY</p>
+    </header>
+
+    <!-- الصورة التعريفية -->
+    <div class="main-frame">
+        <img src="main.jpg" alt="VIP Main" onerror="this.src='https://via.placeholder.com/600x400/161616/d4af37?text=MAIN+IMAGE+VIP'">
+    </div>
+
+    <!-- ملاحظة للزبون -->
+    <div class="vip-note">
+        <i class="fas fa-info-circle"></i>
+        عزيزي الزبون، استمتع بمشاهدة أرقى الموديلات. يمكنك السحب يميناً ويساراً لمشاهدة التفاصيل، ولطلب أي قطعة اضغط على أيقونات التواصل بالأسفل.
+    </div>
+
+    <!-- معرض الصور -->
+    <section class="gallery-container">
+        <h2 class="gallery-title">EXCLUSIVE COLLECTION</h2>
+        <div class="slider-wrapper">
+            <div class="slides-track" id="track">
+                <div class="slide-unit"><img src="1.jpg" alt="Product 1"></div>
+                <div class="slide-unit"><img src="2.jpg" alt="Product 2"></div>
+                <div class="slide-unit"><img src="3.jpg" alt="Product 3"></div>
+                <div class="slide-unit"><img src="4.jpg" alt="Product 4"></div>
+                <div class="slide-unit"><img src="5.jpg" alt="Product 5"></div>
+            </div>
+            <button class="nav-arrow arrow-next" onclick="moveSlide(1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-arrow arrow-prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- أزرار التواصل -->
+    <div class="contact-grid">
+        <a href="https://www.instagram.com/h3x.group?igsh=YzU3bmdlNTVzbzN4" class="contact-btn btn-instagram">
+            <i class="fab fa-instagram"></i>
+            INSTAGRAM
+        </a>
+        <a href="https://wa.me/9647764646451" class="contact-btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            WHATSAPP
+        </a>
+    </div>
+
+    <script>
+        let index = 0;
+        const track = document.getElementById('track');
+        const totalItems = 5;
+
+        function moveSlide(direction) {
+            index += direction;
+            if (index >= totalItems) index = 0;
+            if (index < 0) index = totalItems - 1;
+            
+            const position = index * 100;
+            track.style.transform = `translateX(${position}%)`;
+        }
+
+        // تحسين السحب باللمس للجوال
+        let startX = 0;
+        track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+        track.addEventListener('touchend', e => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) moveSlide(1);
+            if (endX - startX > 50) moveSlide(-1);
+        });
+    </script>
+</body>
+</html>
